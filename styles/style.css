@@ -30,7 +30,8 @@
   font-family: var(--accent-font);
   background-color: #fff;
   border: 2px solid #000;
-  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
+  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem)
+    clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
 }
 
 .logo-group {
@@ -89,20 +90,21 @@
   font-weight: var(--regular-font-weight);
   mix-blend-mode: hard-light;
   opacity: 0.5;
-  text-shadow:
-  -1px 0 var(--text-shadow-color, #fff), 
-  0 1px var(--text-shadow-color, #fff), 
-  1px 0 var(--text-shadow-color, #fff), 
-  0 -1px var(--text-shadow-color, #fff);
+  text-shadow: -1px 0 var(--text-shadow-color, #fff),
+    0 1px var(--text-shadow-color, #fff), 1px 0 var(--text-shadow-color, #fff),
+    0 -1px var(--text-shadow-color, #fff);
 }
 
-@supports ((text-stroke: 1px var(--text-shadow-color, #fff)) or (-webkit-text-stroke: 1px var(--text-shadow-color, #fff))) {
+@supports (
+  (text-stroke: 1px var(--text-shadow-color, #fff)) or
+    (-webkit-text-stroke: 1px var(--text-shadow-color, #fff))
+) {
   .watermark {
     -webkit-text-stroke: 1px var(--text-shadow-color, #fff);
     text-stroke: 1px var(--text-shadow-color, #fff);
     text-shadow: none;
   }
-} 
+}
 
 .article-image {
   inline-size: 100%;
@@ -192,7 +194,7 @@
   align-items: center;
   background-color: transparent;
   border: 2px solid transparent;
-  cursor: pointer; 
+  cursor: pointer;
   max-block-size: var(--like-button-block-size);
   padding: 0;
 }
@@ -342,9 +344,9 @@
 }
 
 .modal-button {
- grid-column: span 2;
- padding-block: 0.78125rem;
- text-transform: uppercase
+  grid-column: span 2;
+  padding-block: 0.78125rem;
+  text-transform: uppercase;
 }
 
 @media (width <=768px) {

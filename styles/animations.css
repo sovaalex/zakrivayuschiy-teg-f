@@ -11,29 +11,29 @@
 */
 
 @keyframes heart-scale {
-0% {
+  0% {
     scale: 1;
-}
+  }
 
-50% {
+  50% {
     scale: 1.25;
-}
+  }
 
-100% {
+  100% {
     scale: 1;
-}
+  }
 }
 
 @keyframes sparks-opacity {
-0% {
+  0% {
     opacity: 0;
-}
+  }
 
-50% {
+  50% {
     opacity: 1;
-}
+  }
 
-100% {
+  100% {
     opacity: 0;
-}
+  }
 }
