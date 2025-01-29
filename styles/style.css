@@ -293,7 +293,7 @@
   animation: sparks-opacity 0.3s 0.3s 1 ease-in;
 }
 
-.is-liked .heart {
+.like-icon.is-liked .heart {
   transform-origin: center;
   animation: heart-scale 0.3s 0.1s 1 ease-in;
 }
