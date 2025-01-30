@@ -12,7 +12,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font, Impact), sans-serif;
+  font-family: var(--main-font, "Inter-Variable"), Arial, sans-serif;
   background-color: #fff;
   background-image: var(--background-image);
   background-attachment: fixed;
@@ -27,7 +27,7 @@
   justify-content: center;
   justify-self: center;
   inline-size: var(--inline-size);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, "PressStart2P"), fantasy;
   background-color: #fff;
   border: 2px solid #000;
   padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem)
@@ -70,6 +70,7 @@
   background-color: #fff;
   border: #000 2px solid;
   padding: 3px 0.625rem 3px;
+  font-size: 1,125rem;
   font-variation-settings: "wght" var(--bold-font-weight, 700);
 }
 
@@ -82,7 +83,7 @@
   position: absolute;
   top: 1.5625rem;
   right: clamp(0.8125rem, 0.5484rem + 1.1268vw, 1.5625rem);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, "PressStart2P"), fantasy;
   font-size: 0.875rem;
   z-index: 2;
   font-weight: var(--regular-font-weight);
@@ -107,37 +108,39 @@
 .article-image {
   inline-size: 100%;
   block-size: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.first-filter {
+.saturate-filter {
   filter: saturate(150%);
 }
 
-.second-filter {
+.grayscale-filter {
   filter: grayscale(80%);
 }
 
-.third-filter {
+.brightness-filter {
   filter: brightness(150%);
 }
 
-.fourth-filter {
+.opacity-filter {
   filter: opacity(70%);
 }
 
-.fifth-filter {
+.sepia-filter {
   filter: sepia(80%);
 }
 
-.sixth-filter {
+.contrast-filter {
   filter: contrast(130%);
 }
 
-.seventh-filter {
+.rotate-filter {
   filter: hue-rotate(15deg);
 }
 
-.eighth-filter {
+.mix-filter {
   filter: sepia(0.5) saturate(1.5) invert(5%);
 }
 
@@ -164,6 +167,7 @@
   position: relative;
   border: 2px solid #000;
   overflow: hidden;
+  transition: 0.3s ease;
 }
 
 .button-style::before {
@@ -182,7 +186,6 @@
 
 .button-style:focus-visible {
   box-shadow: 2px 2px 0 #000;
-  transition-duration: 0.3s;
   outline: none;
 }
 
@@ -195,6 +198,7 @@
   cursor: pointer;
   max-block-size: var(--like-button-block-size);
   padding: 0;
+  transition: 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -202,7 +206,6 @@
 }
 
 .card__icon-button:focus-visible {
-  transition: 0.3s ease;
   border: 2px #000 solid;
 }
 
@@ -220,7 +223,7 @@
   position: relative;
   z-index: 1;
   color: var(--button-text-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, "PressStart2P"), fantasy;
   font-size: 0.875rem;
   line-height: 0.7875em;
   mix-blend-mode: difference;
@@ -233,10 +236,12 @@
 }
 
 .main-body {
+  fill: var(--heart-fill-none);
   transition-duration: 0.3s;
 }
 
 .core {
+  fill: var(--heart-fill-none);
   transition-duration: 0.3s;
   transition-delay: 0.03s;
 }
@@ -298,6 +303,14 @@
 
 /* Dialog styles */
 
+.footer {
+  display: flex;
+  justify-self: center;
+  background-color: #fff;
+  inline-size: var(--save-button-inline-size);
+  block-size: var(--save-button-block-size);
+}
+
 .save-button {
   display: flex;
   justify-content: center;
@@ -305,11 +318,16 @@
   gap: 0.75rem;
   flex-direction: row;
   justify-self: center;
-  inline-size: 20.9375rem;
-  block-size: 3.1875rem;
+  background-color: transparent;
+  inline-size: var(--save-button-inline-size);
+  block-size: var(--save-button-block-size);
 }
 
 .save-sign-svg {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  mix-blend-mode: difference;
   width: var(--save-sign-size);
   height: var(--save-sign-size);
 }
@@ -317,13 +335,13 @@
 .save-dialog[open] {
   display: grid;
   grid-template-columns: auto auto;
+  grid-template-rows: min-content;
   align-items: center;
   column-gap: 1.25rem;
   row-gap: 1.875rem;
   padding: 1.875rem;
   max-inline-size: 22.3125rem;
-  font-family: var(--accent-font), sans-serif;
-  font-size: 0.875rem;
+  font-family: var(--accent-font, "PressStart2P"), fantasy;
   text-transform: uppercase;
 }
 
@@ -338,13 +356,18 @@
 
 .modal-text {
   font-weight: var(--regular-font-weight);
+  font-size: 0.875rem;
   line-height: 1.5;
 }
 
 .modal-button {
   grid-column: span 2;
-  padding-block: 0.78125rem;
+  background-color: transparent;
+  padding-block: 0.65625rem;
   text-transform: uppercase;
+  font-size: 0.875rem;
+  line-height: 0.86;
+  font-weight: var(--regular-font-weight);
 }
 
 @media (width <=768px) {
@@ -354,12 +377,10 @@
 
   .save-button {
     flex-direction: column;
-    inline-size: 19.125rem;
-    block-size: 5rem;
   }
 
   .save-dialog[open] {
-    padding: 1.875rem 2.625rem;
+    padding: 1.875rem 2.4375rem;
     max-inline-size: 21.3125rem;
   }
 }

@@ -1,17 +1,19 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
+  --inline-size: 696px;
   --main-font: "Inter";
   --accent-font: "PressStart2P";
-  --inline-size: 696px;
   --regular-font-weight: 400;
   --bold-font-weight: 700;
-  --save-sign-size: 21px;
-  --modal-save-sign-size: 39px;
   --button-text-color: #fff;
   --text-shadow-color: #fff;
-  --heart-fill-none: transparent; /* fill: none не работает, заменил на transparent */
+  --heart-fill-none: transparent; 
   --heart-fill-hover: #000;
   --heart-fill-active: #ff0000;
+  --save-sign-size: 21px;
+  --modal-save-sign-size: 39px;
+  --save-button-inline-size: 20.9375rem;
+  --save-button-block-size: 3.1875rem;
   --like-button-block-size: 2.375rem;
   --background-image: repeating-linear-gradient(
       to right,
@@ -26,5 +28,7 @@
   :root {
     --inline-size: 100%;
     --save-sign-size: 28px;
+    --save-button-inline-size: 19.125rem;
+    --save-button-block-size: 5rem;
   }
 }
