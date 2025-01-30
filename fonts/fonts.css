@@ -12,5 +12,5 @@
   src: local("Inter-Variable"),
     url("../fonts/Inter-Variable.woff2") format("woff2" "woff2 supports variations"),
     url("../fonts/Inter-Variable.woff2") format("woff2-variations");
-  font-weight: 100, 400, 700, 785, 900;
+  font-weight: 100 900;
 }
