@@ -43,7 +43,6 @@
 
 .header-title {
   text-transform: uppercase;
-  font-weight: var(--bold-font-weight);
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   font-weight: var(--bold-font-weight);
   line-height: 1em;
@@ -51,7 +50,6 @@
 
 .header-subtitle {
   text-transform: uppercase;
-  font-weight: var(--bold-font-weight);
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   font-weight: var(--regular-font-weight);
   line-height: 1em;
